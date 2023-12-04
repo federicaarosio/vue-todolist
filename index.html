@@ -30,8 +30,8 @@
             <!-- Todo list -->
             <ul class="todo-list" >
                 <li class="todo-item" v-for="(singleHike, index) in hikes">
-                    <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'" @click="doneUndone(index)">
-                        <span class="hike-destination">
+                    <div class="todo-item-wrapper" @click="doneUndone(index)">
+                        <span class="hike-destination" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'">
                             {{ singleHike.text }}
                         </span>
                         <span class="remove-item" @click="removeHikeItem(index)">
