@@ -38,23 +38,13 @@ createApp({
     },
 
     methods: {
-        addNewHike(newElement){
-            newElement = newElement.trim();
-            console.log(newElement);
-
-            if (newElement.length > 3 && !this.hikes.includes(newElement)){
-                this.newHikeElement = '';
-                this.hikes.push(newElement);
+        addNewHike() {
+            const newItem = {
+                text: this.newHikeElement,
+                done: false,
             }
-            else
-                console.alert('Inserisci una meta reale');
+            this.hikes.push(newItem);
         },
-
-        stringBeautifier(rawString){
-            rawString = rawString.trim().toLowerCase();
-            return rawString.charAt(0).toUpperCase() + rawString.slice(1);
-        },
-
 
         removeHikeItem(indexToBeRemoved) {
             this.hikes.splice(indexToBeRemoved, 1);
