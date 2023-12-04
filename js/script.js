@@ -32,4 +32,11 @@ createApp({
             ],
         }
     },
+
+    methods: {
+        removeHikeItem(indexToBeRemoved) {
+            this.hikes.splice(indexToBeRemoved, 1);
+        }
+    }
+
 }).mount('#app');

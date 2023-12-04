@@ -37,6 +37,5 @@ div.todo-item-wrapper {
 }
 
 .hike-done {
-    color: lightblue;
     text-decoration: line-through;
 }

@@ -22,12 +22,13 @@
             <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
 
             <ul class="todo-list" >
-                <li class="todo-item" v-for="(singleHike) in hikes">
+                <li class="todo-item" v-for="(singleHike, index) in hikes">
                     <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'">
-                        <span class="hike-destination">{{singleHike.text}}</span>
-                        <span class="done-check">
-                            <p v-if="(singleHike.done)"><i class="fa-solid fa-mountain" style="color: #35692b;"></i></p>
-                            <p v-else><i class="fa-solid fa-mountain" style="color: #d92626;"></i></p>
+                        <span class="hike-destination">
+                            {{ singleHike.text }} <i class="fa-solid fa-mountain"></i>
+                        </span>
+                        <span class="remove-item" @click="removeHikeItem(index)">
+                            <i class="fa-solid fa-square-xmark"></i>
                         </span>
 
                     </div>
