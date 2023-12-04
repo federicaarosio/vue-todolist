@@ -12,7 +12,24 @@
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
 
     <div id="app">
+        <main class="wrapper">
+            <h1>
+                Escursioni
+            </h1>
 
+            <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
+
+            <ul class="todo-list" >
+                <li>
+
+                </li>
+                <li class="todo-item" v-for="(singleHike, index) in hikes">
+                    <span>{{singleHike.text}}</span>
+                    <span>{{singleHike.done}}</span>
+                </li>
+            </ul>
+            
+        </main>
     </div>
 
     <!-- Javascript -->
