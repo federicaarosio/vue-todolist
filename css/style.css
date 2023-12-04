@@ -25,6 +25,10 @@ main.wrapper h1 {
     margin-bottom: 1rem;
 }
 
+div.input-wrapper div.plus:hover {
+    color: lightblue;
+}
+
 main.wrapper ul {
     list-style: none;
 }
@@ -40,4 +44,8 @@ div.todo-item-wrapper {
 
 .hike-done {
     text-decoration: line-through;
+}
+
+span.remove-item:hover {
+    color: lightblue;
 }

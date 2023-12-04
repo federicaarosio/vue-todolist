@@ -39,12 +39,17 @@ createApp({
 
     methods: {
         addNewHike() {
-            const newItem = {
-                text: this.newHikeElement,
-                done: false,
+            if (this.newHikeElement !== '') {
+                const newItem = {
+                    text: this.newHikeElement,
+                    done: false,
+                }
+                this.newHikeElement = '';
+                this.hikes.push(newItem);
+            } else {
+                alert("Inserisci una meta!");
+                
             }
-            this.newHikeElement = '';
-            this.hikes.push(newItem);
         },
 
         removeHikeItem(indexToBeRemoved) {
@@ -54,7 +59,6 @@ createApp({
         doneUndone(index) {
             if (this.hikes[index].done === true) {
                 this.hikes[index].done = false;
-                console.log(this.hikes[index].done)
             } else {
                 this.hikes[index].done = true;
             }
