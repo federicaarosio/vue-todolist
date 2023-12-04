@@ -26,7 +26,7 @@ createApp({
                     done: true,
                 },
                 {
-                    text: 'rifugio Dodici Apostoli',
+                    text: 'Rifugio Dodici Apostoli',
                     done: false,
                 },
             ],

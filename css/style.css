@@ -9,7 +9,7 @@ body {
 }
 
 main.wrapper {
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
     padding: 1rem;
     background-color: rgb(243, 243, 243);
@@ -28,7 +28,15 @@ main.wrapper ul {
 }
 
 main.wrapper li {
+    border-bottom: 1px solid lightblue;
+}
+
+div.todo-item-wrapper {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid lightblue;
+}
+
+.hike-done {
+    color: lightblue;
+    text-decoration: line-through;
 }

@@ -6,6 +6,8 @@
     <title>Vue To Do List</title>
     <!-- Custom css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- vue 3 -->
@@ -20,12 +22,15 @@
             <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
 
             <ul class="todo-list" >
-                <li>
+                <li class="todo-item" v-for="(singleHike) in hikes">
+                    <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'">
+                        <span class="hike-destination">{{singleHike.text}}</span>
+                        <span class="done-check">
+                            <p v-if="(singleHike.done)"><i class="fa-solid fa-mountain" style="color: #35692b;"></i></p>
+                            <p v-else><i class="fa-solid fa-mountain" style="color: #d92626;"></i></p>
+                        </span>
 
-                </li>
-                <li class="todo-item" v-for="(singleHike, index) in hikes">
-                    <span>{{singleHike.text}}</span>
-                    <span>{{singleHike.done}}</span>
+                    </div>
                 </li>
             </ul>
             
