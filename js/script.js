@@ -29,14 +29,38 @@ createApp({
                     text: 'Rifugio Dodici Apostoli',
                     done: false,
                 },
+                {
+                    text: 'Rifugio Elisabetta',
+                    done: true,
+                },
             ],
         }
     },
 
     methods: {
+        addNewHike(newElement){
+            newElement = newElement.trim();
+            console.log(newElement);
+
+            if (newElement.length > 3 && !this.hikes.includes(newElement)){
+                this.newHikeElement = '';
+                this.hikes.push(newElement);
+            }
+            else
+                console.alert('Inserisci una meta reale');
+        },
+
+        stringBeautifier(rawString){
+            rawString = rawString.trim().toLowerCase();
+            return rawString.charAt(0).toUpperCase() + rawString.slice(1);
+        },
+
+
         removeHikeItem(indexToBeRemoved) {
             this.hikes.splice(indexToBeRemoved, 1);
-        }
+        },
+
+
     }
 
 }).mount('#app');

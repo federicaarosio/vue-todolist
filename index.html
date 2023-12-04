@@ -16,16 +16,21 @@
     <div id="app">
         <main class="wrapper">
             <h1>
-                Escursioni
+                Escursioni <i class="fa-solid fa-mountain"></i>
             </h1>
 
-            <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
+            <div class="input-wrapper">
+                <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
+                <div class="plus" @click="addNewHike(newHikeElement)">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
 
             <ul class="todo-list" >
                 <li class="todo-item" v-for="(singleHike, index) in hikes">
                     <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'">
                         <span class="hike-destination">
-                            {{ singleHike.text }} <i class="fa-solid fa-mountain"></i>
+                            {{ singleHike.text }}
                         </span>
                         <span class="remove-item" @click="removeHikeItem(index)">
                             <i class="fa-solid fa-square-xmark"></i>

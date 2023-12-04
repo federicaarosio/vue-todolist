@@ -19,7 +19,9 @@ main.wrapper h1 {
     margin-bottom: 1rem;
 }
 
-main.wrapper input {
+.input-wrapper {
+    display: flex;
+    gap: .5rem;
     margin-bottom: 1rem;
 }
 
