@@ -43,12 +43,22 @@ createApp({
                 text: this.newHikeElement,
                 done: false,
             }
+            this.newHikeElement = '';
             this.hikes.push(newItem);
         },
 
         removeHikeItem(indexToBeRemoved) {
             this.hikes.splice(indexToBeRemoved, 1);
         },
+
+        doneUndone(index) {
+            if (this.hikes[index].done === true) {
+                this.hikes[index].done = false;
+                console.log(this.hikes[index].done)
+            } else {
+                this.hikes[index].done = true;
+            }
+        }
 
 
     }

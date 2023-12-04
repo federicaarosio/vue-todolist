@@ -19,16 +19,18 @@
                 Escursioni <i class="fa-solid fa-mountain"></i>
             </h1>
 
+            <!-- input -->
             <div class="input-wrapper">
-                <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement">
+                <input type="text" class="new-todo-item" id="userInput" name="userInput" v-model="newHikeElement" @keyup.enter="addNewHike(newHikeElement)">
                 <div class="plus" @click="addNewHike(newHikeElement)">
                     <i class="fa-solid fa-plus"></i>
                 </div>
             </div>
 
+            <!-- Todo list -->
             <ul class="todo-list" >
                 <li class="todo-item" v-for="(singleHike, index) in hikes">
-                    <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'">
+                    <div class="todo-item-wrapper" :class = "(singleHike.done)?'hike-done':'hike-to-be-done'" @click="doneUndone(index)">
                         <span class="hike-destination">
                             {{ singleHike.text }}
                         </span>
